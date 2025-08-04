@@ -1,6 +1,4 @@
 
-package itemvenda;
-
 
 public class ItemVenda {
    private Produto produto;
@@ -33,12 +31,13 @@ public class ItemVenda {
     }
     public float calcularTotalItem(float total){
             
-        total = produto.getIdProduto(produto.getPrecoUnitario())* quant;
+        total = produto.getPrecoUnitario()* quant;
         return total;
             
         }
     public float calcularTotalItemComDesco(float totaldesc){
-        totaldesc = 
+        totaldesc = produto.getIdProduto(produto.getPrecoUnitario())* quant;
+       return totaldesc;
     }
 
 
