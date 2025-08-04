@@ -24,6 +24,18 @@ public class Eletronico extends Produto{
         this.voltagem = voltagem;
     }
 
+    public float precoComDesconto(){
+        return (float) (this.precoUnitario * 0.90);
+    }
 
-
+    @Override
+    public String toString() {
+        return "Eletronico: \n" +
+                "garantiaMeses=" + garantiaMeses + "\n"+
+                "voltagem='" + voltagem + '\'' + "\n"+
+                "idProduto=" + idProduto + "\n"+
+                "nome='" + nome + '\'' + "\n"+
+                "precoUnitario=" + precoUnitario + "\n"+
+                "quantEstoque=" + quantEstoque ;
+    }
 }
