@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Venda {
     private int idVenda;
     private String dataVenda;
-    private ArrayList<ItemVenda> itensVenda;
+    private ArrayList<ItemVenda> itensVenda = new ArrayList<>();
     private String status;
 
     public Venda(int idVenda, String dataVenda) {
