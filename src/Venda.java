@@ -39,10 +39,11 @@ public class Venda {
     }
 
     public void addItemVenda(ItemVenda item) {
-        if (itensVenda == null) {
-            itensVenda = new ArrayList<>();
+        if (item.getProduto().atualizarEstoque(item.getQuantidade())) {
+            this.itensVenda.add(item);
+        } else {
+            System.out.println("Erro: Não foi possível atualizar o estoque do produto " + item.getProduto().getNome());
         }
-        this.itensVenda.add(item);
     }
 
     public void removeItemVenda(ItemVenda item) {
