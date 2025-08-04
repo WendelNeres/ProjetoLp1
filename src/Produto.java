@@ -1,4 +1,4 @@
-public class Produto {
+public abstract class Produto {
     protected int idProduto;
     protected String nome;
     protected float precoUnitario;
@@ -39,6 +39,8 @@ public class Produto {
         return quantEstoque;
     }
 
+    public abstract float precoComDesconto();
+
     public void setQuantEstoque(int quantEstoque) {
         this.quantEstoque = quantEstoque;
     }
@@ -51,7 +53,7 @@ public class Produto {
         if (this.quantEstoque < quantidade) {
             return false;
         }else {
-            setQuantEstoque( getQuantEstoque() - quantEstoque);
+            setQuantEstoque( getQuantEstoque() - quantidade);
             return true;
         }
     }
