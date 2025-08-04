@@ -26,7 +26,7 @@ public class Livros extends Produto {
         this.numeroPaginas = numeroPaginas;
     }
 
-    public double precoComDesconto() {
+    public float precoComDesconto() {
         return (float) (this.PrecoUnitario * 0.85);
     }
 
@@ -37,3 +37,4 @@ public class Livros extends Produto {
                "\nPreço com Desconto: " + precoComDesconto();
     }
 }
+
