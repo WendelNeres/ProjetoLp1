@@ -1,8 +1,8 @@
-public class Livros extends Produto {
+public class Livro extends Produto {
     String autor;
     int numeroPaginas;
 
-    public Livros(String autor,int numeroPaginas){
+    public Livro(String autor, int numeroPaginas, int idProduto, String nome, float precoUnitario, int quantEstoque){
         
         super(idProduto,nome,precoUnitario,quantEstoque);
         this.autor = autor;
@@ -26,8 +26,9 @@ public class Livros extends Produto {
         this.numeroPaginas = numeroPaginas;
     }
 
+    @Override
     public float precoComDesconto() {
-        return (float) (this.PrecoUnitario * 0.85);
+        return (float) (this.precoUnitario * 0.85);
     }
 
     public String toString() {
