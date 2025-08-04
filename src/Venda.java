@@ -1,5 +1,3 @@
-package venda;
-
 import java.util.ArrayList;
 
 public class Venda {
@@ -39,7 +37,8 @@ public class Venda {
     }
 
     public void addItemVenda(ItemVenda item) {
-        if (item.getProduto().atualizarEstoque(item.getQuantidade())) {
+
+        if (item.getProduto().atualizarEstoque(item.getQuant())) {
             this.itensVenda.add(item);
         } else {
             System.out.println("Erro: Não foi possível atualizar o estoque do produto " + item.getProduto().getNome());
@@ -53,7 +52,7 @@ public class Venda {
     public double calcularTotalVenda() {
         double total = 0.0;
         for (ItemVenda item : itensVenda) {
-            total += item.getValorTotal();
+            total += item.getProduto().precoUnitario;
         }
         return total;
     }
@@ -61,20 +60,20 @@ public class Venda {
     public double calcularTotalVendaComDesc() {
         double total = 0.0;
         for (ItemVenda item : itensVenda) {
-            total += item.getValorTotalComDesconto();
+            total += item.getProduto().precoComDesconto();
         }
         return total;
     }
 
     @Override
     public String toString() {
-        return "Venda: {" +
+        return
                 "idVenda=" + idVenda + '\n' +
                 " dataVenda='" + dataVenda + '\n' +
                 " status='" + status + '\n' +
                 " total=" + calcularTotalVenda() + "\n" +
                 " totalComDesconto=" + calcularTotalVendaComDesc() + "\n" +
-                " itensVenda=" + itensVenda +
-                '}';
+                " itensVenda=" + itensVenda.toString() + "\n"
+                ;
     }
 }
