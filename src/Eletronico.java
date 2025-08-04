@@ -24,6 +24,7 @@ public class Eletronico extends Produto{
         this.voltagem = voltagem;
     }
 
+    @Override
     public float precoComDesconto(){
         return (float) (this.precoUnitario * 0.90);
     }
