@@ -3,7 +3,8 @@ public class Livros extends Produto {
     int numeroPaginas;
 
     public Livros(String autor,int numeroPaginas){
-       
+        
+        super(idProduto,nome,precoUnitario,quantEstoque);
         this.autor = autor;
         this.numeroPaginas = numeroPaginas;
         
