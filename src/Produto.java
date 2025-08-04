@@ -42,4 +42,17 @@ public class Produto {
     public void setQuantEstoque(int quantEstoque) {
         this.quantEstoque = quantEstoque;
     }
+
+    public float calcularValorEstoque(){
+        return this.precoUnitario * this.quantEstoque;
+    }
+
+    public boolean atualizarEstoque(int quantidade){
+        if (this.quantEstoque < quantidade) {
+            return false;
+        }else {
+            setQuantEstoque( getQuantEstoque() - quantEstoque);
+            return true;
+        }
+    }
 }

@@ -23,4 +23,7 @@ public class Eletronico extends Produto{
     public void setVoltagem(String voltagem) {
         this.voltagem = voltagem;
     }
+
+
+
 }
