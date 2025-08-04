@@ -35,12 +35,16 @@ public class ItemVenda {
         return total;
             
         }
-    public float calcularTotalItemComDesco(float totaldesc){
-        totaldesc = produto.getIdProduto(produto.getPrecoUnitario())* quant;
-       return totaldesc;
+    public float calcularTotalItemComDesconto(){
+        return this.produto.precoComDesconto() * this.quant;
+
     }
 
-
-  
-    
+    @Override
+    public String toString() {
+        return
+                "produto=" + produto.getNome() +
+                ", quant=" + quant
+                ;
+    }
 }
