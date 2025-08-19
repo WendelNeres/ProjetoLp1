@@ -57,7 +57,7 @@ public class Venda {
     public double calcularTotalVenda() {
         double total = 0.0;
         for (ItemVenda item : itensVenda) {
-            total += item.getValorTotal() * item.getQuantidade();
+            total += item.getValorTotal() * item.getQuant();
         }
         return total;
     }
@@ -65,7 +65,7 @@ public class Venda {
     public double calcularTotalVendaComDesc() {
         double total = 0.0;
         for (ItemVenda item : itensVenda) {
-            total += item.getValorTotalComDesconto() * item.getQuantidade();
+            total += item.getValorTotalComDesconto() * item.getQuant();
         }
         return total;
     }
@@ -82,3 +82,4 @@ public class Venda {
                 '}';
     }
 }
+
