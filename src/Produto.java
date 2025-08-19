@@ -57,4 +57,15 @@ public abstract class Produto {
             return true;
         }
     }
+      @Override
+public String toString() {
+    return 
+            "Produto:\n" +
+           "ID: " + this.idProduto + "\n" +
+           "Nome: " + this.nome + "\n" +
+           "Preço Unitário: R$" + String.format("%.2f", this.precoUnitario) + "\n" +
+           "Quantidade em Estoque: " + this.quantEstoque + "\n" +
+           "Valor Total em Estoque: R$" + String.format("%.2f", calcularValorEstoque());
+}
+}
 }
